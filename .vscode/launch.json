@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Module",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pyoncokb"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "tests all",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "python",
+            "args": [
+                "-m",
+                "unittest"
+            ],
+        },
+        {
+            "name": "tests/oncokbapi/test_oncokbapi",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "python",
+            "args": [
+                "-m",
+                "unittest",
+                "tests/oncokbapi/test_oncokbapi.py"
+            ],
+        }
+    ]
+}
