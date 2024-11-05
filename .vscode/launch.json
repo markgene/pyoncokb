@@ -21,20 +21,14 @@
             "name": "tests all",
             "type": "debugpy",
             "request": "launch",
-            "program": "python",
-            "args": [
-                "-m",
-                "unittest"
-            ],
+            "module": "unittest"
         },
         {
             "name": "tests/oncokbapi/test_oncokbapi",
             "type": "debugpy",
             "request": "launch",
-            "program": "python",
+            "module": "unittest",
             "args": [
-                "-m",
-                "unittest",
                 "tests/oncokbapi/test_oncokbapi.py"
             ],
         }
