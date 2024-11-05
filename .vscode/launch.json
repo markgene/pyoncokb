@@ -31,6 +31,15 @@
             "args": [
                 "tests/oncokbapi/test_oncokbapi.py"
             ],
+        },
+        {
+            "name": "tests/cancergenes/test_cancergenelistget",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests/cancergenes/test_cancergenelistget.py"
+            ],
         }
     ]
 }
