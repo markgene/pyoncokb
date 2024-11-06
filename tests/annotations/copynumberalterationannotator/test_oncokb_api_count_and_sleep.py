@@ -36,6 +36,6 @@ class CnvAnnotatoOncokbApiCountAndSleepTestCase(unittest.TestCase):
             copy_alteration_type="AMPLIFICATION",
             ref_genome="GRCh37",
         )
-        with self.assertLogs(logger="oncokb.oncokbapi.oncokbapi", level="DEBUG") as cm:
-            indicator_query_resp2 = annotator2.query()
+        with self.assertLogs(logger="", level="DEBUG") as cm:
+            annotator2.query()
             self.assertIn("sleep", cm.output[0])

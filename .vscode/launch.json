@@ -24,12 +24,30 @@
             "module": "unittest"
         },
         {
-            "name": "tests/annotations/cameltosnakecasekeyconverter",
+            "name": "tests/annotations/copynumberalterationannotator",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/annotations/cameltosnakecasekeyconverter.py"
+                "tests/annotations/copynumberalterationannotator/"
+            ],
+        },
+        {
+            "name": "tests/annotations/copynumberalterationannotator/test_oncokb_api_count_and_sleep",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests/annotations/copynumberalterationannotator/test_oncokb_api_count_and_sleep.py"
+            ],
+        },
+        {
+            "name": "tests/annotations/test_cameltosnakecasekeyconverter",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests/annotations/test_cameltosnakecasekeyconverter.py"
             ],
         },
         {
