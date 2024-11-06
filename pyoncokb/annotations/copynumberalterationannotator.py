@@ -9,7 +9,6 @@ from pyoncokb.oncokbapi import OncokbApi
 from .cameltosnakecasekeyconverter import CamelToSnakeCaseKeyConverter
 
 
-
 class CopyNumberAlterationAnnotator:
     """Annotate CNV.
 
@@ -73,7 +72,9 @@ class CopyNumberAlterationAnnotator:
         if data is not None:
             assert isinstance(data, dict)
             converted = CamelToSnakeCaseKeyConverter.convert(data)
-            indicator_query_resp = from_dict(data_class=IndicatorQueryResp, data=converted)
+            indicator_query_resp = from_dict(
+                data_class=IndicatorQueryResp, data=converted
+            )
             return indicator_query_resp
         return None
 
