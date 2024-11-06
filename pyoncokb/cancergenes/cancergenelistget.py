@@ -4,9 +4,8 @@ from typing import Optional
 
 from dacite import from_dict
 
+from pyoncokb.models.cancergene import CancerGene
 from pyoncokb.oncokbapi import OncokbApi
-
-from .cancergene import CancerGene
 from .cancergenefieldnameconverter import CancerGeneFieldNameConverter
 
 

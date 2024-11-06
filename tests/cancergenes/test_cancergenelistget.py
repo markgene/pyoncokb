@@ -2,8 +2,8 @@
 
 import unittest
 
-from pyoncokb.cancergenes.cancergene import CancerGene
 from pyoncokb.cancergenes.cancergenelistget import CancerGeneListGet
+from pyoncokb.models.cancergene import CancerGene
 from pyoncokb.oncokbapi import OncokbApi
 from tests.testconfig import TestConfig
 
