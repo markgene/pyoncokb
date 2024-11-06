@@ -16,8 +16,8 @@ class MutationEffectResp:
 
     def __post_init__(self):
         if not isinstance(self.citations, Citations):
-            raise ValueError(f"citations must be a Citations")
+            raise ValueError(f"citations {self.citations} must be a Citations")
         if not isinstance(self.description, str):
-            raise ValueError(f"description must be a str")
+            raise ValueError(f"description {self.description} must be a str")
         if not isinstance(self.known_effect, str):
-            raise ValueError(f"known_effect must be a str")
+            raise ValueError(f"known_effect {self.known_effect} must be a str")

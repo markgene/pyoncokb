@@ -17,12 +17,12 @@ class Citations:
 
     def __post_init__(self):
         if not isinstance(self.abstracts, list):
-            raise ValueError(f"abstracts must be a list")
+            raise ValueError(f"abstracts {self.abstracts} must be a list")
         for abstract in self.abstracts:
             if not isinstance(abstract, ArticleAbstract):
-                raise ValueError(f"abstract must be a ArticleAbstract")
+                raise ValueError(f"abstract {abstract} must be a ArticleAbstract")
         if not isinstance(self.pmids, list):
-            raise ValueError(f"pmids must be a list")
+            raise ValueError(f"pmids {self.pmids} must be a list")
         for pmid in self.pmids:
             if not isinstance(pmid, str):
-                raise ValueError(f"pmid must be a str")
+                raise ValueError(f"pmid {pmid} must be a str")

@@ -22,23 +22,23 @@ class Implication:
 
     def __post_init__(self):
         if not isinstance(self.abstracts, list):
-            raise ValueError(f"abstracts must be a list")
+            raise ValueError(f"abstracts {self.abstracts} must be a list")
         for abstract in self.abstracts:
             if not isinstance(abstract, ArticleAbstract):
-                raise ValueError(f"abstract must be a ArticleAbstract")
+                raise ValueError(f"abstract {abstract} must be a ArticleAbstract")
         if not isinstance(self.alterations, list):
-            raise ValueError(f"alterations must be a list")
+            raise ValueError(f"alterations {self.alterations} must be a list")
         for alteration in self.alterations:
             if not isinstance(alteration, str):
-                raise ValueError(f"alteration must be a str")
+                raise ValueError(f"alteration {alteration} must be a str")
         if not isinstance(self.description, str):
-            raise ValueError(f"description must be a str")
+            raise ValueError(f"description {self.description} must be a str")
         if not isinstance(self.level_of_evidence, str):
-            raise ValueError(f"level_of_evidence must be a str")
+            raise ValueError(f"level_of_evidence {self.level_of_evidence} must be a str")
         if not isinstance(self.pmids, list):
-            raise ValueError(f"pmids must be a list")
+            raise ValueError(f"pmids {self.pmids} must be a list")
         for pmid in self.pmids:
             if not isinstance(pmid, str):
-                raise ValueError(f"pmid must be a str")
+                raise ValueError(f"pmid {pmid} must be a str")
         if not isinstance(self.tumor_type, TumorType):
-            raise ValueError(f"tumor_type must be a TumorType instance")
+            raise ValueError(f"tumor_type {self.tumor_type} must be a TumorType instance")
