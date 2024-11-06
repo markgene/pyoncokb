@@ -29,7 +29,7 @@
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/annotations/copynumberalterationannotator/"
+                "tests.annotations.copynumberalterationannotator"
             ],
         },
         {
@@ -39,6 +39,15 @@
             "module": "unittest",
             "args": [
                 "tests/annotations/copynumberalterationannotator/test_oncokb_api_count_and_sleep.py"
+            ],
+        },
+        {
+            "name": "tests.annotations/proteinchangeannotator",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests.annotations.proteinchangeannotator"
             ],
         },
         {
