@@ -63,6 +63,16 @@
             ],
         },
         {
+            "name": "tests.annotations.structuralvariantannotator",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "discover",
+                "tests.annotations.structuralvariantannotator"
+            ],
+        },
+        {
             "name": "tests.annotations.test_cameltosnakecasekeyconverter",
             "type": "debugpy",
             "request": "launch",
