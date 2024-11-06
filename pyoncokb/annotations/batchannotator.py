@@ -12,10 +12,10 @@ from .cameltosnakecasekeyconverter import CamelToSnakeCaseKeyConverter
 class BatchAnnotator:
     """Batch annotator."""
 
-    def __init__(self, oncokb_api: OncokbApi, service_url: str, variants: list):
+    def __init__(self, oncokb_api: OncokbApi, service_url: str, queries: list):
         self.oncokb_api = oncokb_api
         self.service_url = service_url
-        self.variants = variants
+        self.queries = queries
 
     def create_url(self):
         """URL for annotating mutation by protein change.
@@ -35,7 +35,7 @@ class BatchAnnotator:
         """
         self.oncokb_api.count_and_sleep()
         url = self.create_url()
-        data = self.oncokb_api.get_data(url=url)
+        data = self.oncokb_api.post_data(url=url, data=self.queries)
         if data is not None:
             assert isinstance(data, list)
             converted = CamelToSnakeCaseKeyConverter.convert(data)
@@ -46,6 +46,7 @@ class BatchAnnotator:
                 )
                 output.append(indicator_query_resp)
             return output
+        return None
 
     def annotate(self) -> Optional[list[IndicatorQueryResp]]:
         """Annotate.

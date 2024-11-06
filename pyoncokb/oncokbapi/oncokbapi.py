@@ -75,31 +75,35 @@ class OncokbApi:
         response = requests.get(url, headers=headers, timeout=self.timeout)
         return response
 
-    def post_data(self, url: str) -> Union[List, Dict, None]:
+    def post_data(self, url: str, data: Union[List, Dict]) -> Union[List, Dict, None]:
         """Use HTTP POST method to get data.
 
         :param url: URL of a query.
         :type url: str
+        :param data: data for POST method.
+        :type data: Union[List, Dict]
         :return: convert API JSON response to Python data structure.
         :rtype: Union[List, Dict, None]
         """
-        response = self.post_response(url=url)
+        response = self.post_response(url=url, data=data)
         if response.status_code == 200:
             # Extract the response data in JSON format
             return response.json()
         logger.warning("Request failed with status code %i", response.status_code)
         return None
 
-    def post_response(self, url: str) -> requests.Response:
+    def post_response(self, url: str, data: Union[List, Dict]) -> requests.Response:
         """Get HTTP response of POST method for a query.
 
         :param url: URL of a query.
         :type url: str
+        :param data: data for POST method.
+        :type data: Union[List, Dict]
         :return: a :class:`requests.Response`.
         :rtype: requests.Response
         """
         headers = self.get_headers()
-        response = requests.get(url, headers=headers, timeout=self.timeout)
+        response = requests.post(url, json=data, headers=headers, timeout=self.timeout)
         return response
 
     def get_headers(self) -> Dict:

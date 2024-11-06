@@ -72,6 +72,15 @@
             ],
         },
         {
+            "name": "tests.annotations.test_proteinchangesannotator",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests.annotations.test_proteinchangesannotator"
+            ],
+        },
+        {
             "name": "tests.cancergenes.test_cancergenelistget",
             "type": "debugpy",
             "request": "launch",

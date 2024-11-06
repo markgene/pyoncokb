@@ -12,13 +12,13 @@ class ProteinChangesAnnotator(BatchAnnotator):
     def __init__(self, oncokb_api: OncokbApi, protein_changes: list):
         service_url = "/annotate/mutations/byProteinChange"
         super().__init__(
-            oncokb_api=oncokb_api, service_url=service_url, variants=protein_changes
+            oncokb_api=oncokb_api, service_url=service_url, queries=protein_changes
         )
-        self.check_variants_format()
+        self.check_queries_format()
 
-    def check_variants_format(self):
-        """Check variants of protein changes is in the good format."""
-        protein_changes = self.variants
+    def check_queries_format(self):
+        """Check queries of protein changes is in the good format."""
+        protein_changes = self.queries
         assert isinstance(protein_changes, list)
         for elm in protein_changes:
             assert isinstance(elm, dict)
