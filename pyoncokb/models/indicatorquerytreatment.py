@@ -26,47 +26,47 @@ class IndicatorQueryTreatment:
 
     def __post_init__(self):
         if not isinstance(self.abstracts, list):
-            raise ValueError(f"abstracts must be a list")
+            raise ValueError(f"abstracts {self.abstracts} must be a list")
         for abstract in self.abstracts:
             if not isinstance(abstract, ArticleAbstract):
-                raise ValueError(f"abstract must be a ArticleAbstract")
+                raise ValueError(f"abstract {abstract} must be a ArticleAbstract")
         if not isinstance(self.alterations, list):
-            raise ValueError(f"alterations must be a list")
+            raise ValueError(f"alterations {self.alterations} must be a list")
         for alteration in self.alterations:
             if not isinstance(alteration, str):
-                raise ValueError(f"alteration must be a str")
+                raise ValueError(f"alteration {alteration} must be a str")
         if not isinstance(self.approved_indications, list):
-            raise ValueError(f"approved_indications must be a list")
+            raise ValueError(f"approved_indications {self.approved_indications} must be a list")
         for indication in self.approved_indications:
             if not isinstance(indication, str):
-                raise ValueError(f"indication must be a str")
+                raise ValueError(f"indication {indication} must be a str")
         if not isinstance(self.description, str):
-            raise ValueError(f"description must be a str")
+            raise ValueError(f"description {self.description} must be a str")
         if not isinstance(self.drugs, list):
-            raise ValueError(f"drugs must be a list")
+            raise ValueError(f"drugs {self.drugs} must be a list")
         for drug in self.drugs:
             if not isinstance(drug, Drug):
-                raise ValueError(f"drug must be a Drug")
+                raise ValueError(f"drug {drug} must be a Drug")
         if not isinstance(self.fda_level, str):
-            raise ValueError(f"fda_level must be a str")
+            raise ValueError(f"fda_level {self.fda_level} must be a str")
         if not isinstance(self.level, str):
-            raise ValueError(f"level must be a str")
+            raise ValueError(f"level {self.level} must be a str")
         if not isinstance(self.level_associated_cancer_type, TumorType):
             raise ValueError(
-                f"level_associated_cancer_type must be a TumorType instance"
+                f"level_associated_cancer_type {self.level_associated_cancer_type} must be a TumorType instance"
             )
         if not isinstance(self.level_excluded_cancer_types, list):
-            raise ValueError(f"level_excluded_cancer_types must be a list")
+            raise ValueError(f"level_excluded_cancer_types {self.level_excluded_cancer_types} must be a list")
         for level_excluded_cancer_type in self.level_excluded_cancer_types:
             if not isinstance(level_excluded_cancer_type, TumorType):
                 raise ValueError(
-                    f"level_excluded_cancer_type must be a TumorType instance"
+                    f"level_excluded_cancer_type {level_excluded_cancer_type} must be a TumorType instance"
                 )
         if not isinstance(self.pmids, list):
-            raise ValueError(f"pmids must be a list")
+            raise ValueError(f"pmids {self.pmids} must be a list")
         for pmid in self.pmids:
             if not isinstance(pmid, str):
-                raise ValueError(f"pmid must be a str")
+                raise ValueError(f"pmid {pmid} must be a str")
 
     def summarize(self) -> dict:
         """Summarize the information of interest.
