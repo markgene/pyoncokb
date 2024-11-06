@@ -24,12 +24,12 @@
             "module": "unittest"
         },
         {
-            "name": "tests/oncokbapi/test_oncokbapi",
+            "name": "tests/annotations/cameltosnakecasekeyconverter",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/oncokbapi/test_oncokbapi.py"
+                "tests/annotations/cameltosnakecasekeyconverter.py"
             ],
         },
         {
@@ -39,6 +39,15 @@
             "module": "unittest",
             "args": [
                 "tests/cancergenes/test_cancergenelistget.py"
+            ],
+        },
+        {
+            "name": "tests/oncokbapi/test_oncokbapi",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "tests/oncokbapi/test_oncokbapi.py"
             ],
         }
     ]
