@@ -24,57 +24,69 @@
             "module": "unittest"
         },
         {
-            "name": "tests/annotations/copynumberalterationannotator",
+            "name": "tests.annotations.copynumberalterationannotator",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
+                "discover",
                 "tests.annotations.copynumberalterationannotator"
             ],
         },
         {
-            "name": "tests/annotations/copynumberalterationannotator/test_oncokb_api_count_and_sleep",
+            "name": "tests.annotations.copynumberalterationannotator.test_oncokb_api_count_and_sleep",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/annotations/copynumberalterationannotator/test_oncokb_api_count_and_sleep.py"
+                "tests.annotations.copynumberalterationannotator.test_oncokb_api_count_and_sleep"
             ],
         },
         {
-            "name": "tests.annotations/proteinchangeannotator",
+            "name": "tests.annotations.genomicchangeannotator",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
+                "discover",
+                "tests.annotations.genomicchangeannotator"
+            ],
+        },
+        {
+            "name": "tests.annotations.proteinchangeannotator",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "unittest",
+            "args": [
+                "discover",
                 "tests.annotations.proteinchangeannotator"
             ],
         },
         {
-            "name": "tests/annotations/test_cameltosnakecasekeyconverter",
+            "name": "tests.annotations.test_cameltosnakecasekeyconverter",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/annotations/test_cameltosnakecasekeyconverter.py"
+                "tests.annotations.test_cameltosnakecasekeyconverter"
             ],
         },
         {
-            "name": "tests/cancergenes/test_cancergenelistget",
+            "name": "tests.cancergenes.test_cancergenelistget",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/cancergenes/test_cancergenelistget.py"
+                "tests.cancergenes.test_cancergenelistget"
             ],
         },
         {
-            "name": "tests/oncokbapi/test_oncokbapi",
+            "name": "tests.oncokbapi.test_oncokbapi",
             "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
-                "tests/oncokbapi/test_oncokbapi.py"
+                "tests.oncokbapi.test_oncokbapi"
             ],
         }
     ]
