@@ -1,1 +1,1 @@
-"""Models."""
+"""Models of OncoKB API."""
