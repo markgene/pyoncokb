@@ -204,22 +204,22 @@ class GenomicChangeAnnotatorBrafV600eTestCase(unittest.TestCase):
     def test_is_met_splice_variant(self):
         self.assertFalse(self.indicator_query_resp.is_met_splice_variant())
 
-    def test_is_resistant(self) -> bool:
+    def test_is_resistant(self):
         """Is the variant related to therapy resistance?"""
         self.assertFalse(self.indicator_query_resp.is_resistant())
 
-    def test_is_oncogenic(self) -> bool:
+    def test_is_oncogenic(self):
         """Is the variant oncogenic?"""
         self.assertTrue(self.indicator_query_resp.is_oncogenic())
 
-    def test_is_likely_neutral(self) -> bool:
+    def test_is_likely_neutral(self):
         """Is the variant likely neutral?"""
         self.assertFalse(self.indicator_query_resp.is_likely_neutral())
 
-    def test_is_inconclusive(self) -> bool:
+    def test_is_inconclusive(self):
         """Is the variant pathogenecity inconclusive?"""
         self.assertFalse(self.indicator_query_resp.is_inconclusive())
 
-    def test_is_unknown(self) -> bool:
+    def test_is_unknown(self):
         """Is the variant pathogenecity unknown?"""
         self.assertFalse(self.indicator_query_resp.is_unknown())
