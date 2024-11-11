@@ -259,3 +259,26 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
         self.assertTrue("pmids" in treatment)
         self.assertTrue("level" in treatment)
         self.assertTrue("level_associated_cancer_type_name" in treatment)
+
+    def test_is_met_splice_variant(self):
+        self.assertFalse(self.indicator_query_response.is_met_splice_variant())
+
+    def test_is_resistant(self) -> bool:
+        """Is the variant related to therapy resistance?"""
+        self.assertTrue(self.indicator_query_response.is_resistant())
+
+    def test_is_oncogenic(self) -> bool:
+        """Is the variant oncogenic?"""
+        self.assertTrue(self.indicator_query_response.is_oncogenic())
+
+    def test_is_likely_neutral(self) -> bool:
+        """Is the variant likely neutral?"""
+        self.assertFalse(self.indicator_query_response.is_likely_neutral())
+
+    def test_is_inconclusive(self) -> bool:
+        """Is the variant pathogenecity inconclusive?"""
+        self.assertFalse(self.indicator_query_response.is_inconclusive())
+
+    def test_is_unknown(self) -> bool:
+        """Is the variant pathogenecity unknown?"""
+        self.assertFalse(self.indicator_query_response.is_unknown())

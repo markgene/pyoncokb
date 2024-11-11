@@ -185,10 +185,33 @@ class GenomicChangeAnnotatorEgfrE746a750delTestCase(unittest.TestCase):
             for treatment in treatments_level_1:
                 if (
                     treatment["level_associated_cancer_type_name"]
-                    == 'Non-Small Cell Lung Cancer'
+                    == "Non-Small Cell Lung Cancer"
                     and treatment["approved_indications"]
-                    == 'Erlotinib is FDA-approved for (1) First-line treatment of metastatic non-small cell lung cancer with EGFR exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test, (2) maintenance treatment of non small cell lung cancer (NSCLC) that has stabilized after platinum-based chemotherapy, (3) locally advanced or metastatic NSCLC after failure of chemotherapy.'
+                    == "Erlotinib is FDA-approved for (1) First-line treatment of metastatic non-small cell lung cancer with EGFR exon 19 deletions or exon 21 (L858R) substitution mutations as detected by an FDA-approved test, (2) maintenance treatment of non small cell lung cancer (NSCLC) that has stabilized after platinum-based chemotherapy, (3) locally advanced or metastatic NSCLC after failure of chemotherapy."
                 ):
                     flag = True
                     break
         self.assertTrue(flag)
+
+    def test_is_met_splice_variant(self):
+        self.assertFalse(self.indicator_query_response.is_met_splice_variant())
+
+    def test_is_resistant(self) -> bool:
+        """Is the variant related to therapy resistance?"""
+        self.assertFalse(self.indicator_query_response.is_resistant())
+
+    def test_is_oncogenic(self) -> bool:
+        """Is the variant oncogenic?"""
+        self.assertTrue(self.indicator_query_response.is_oncogenic())
+
+    def test_is_likely_neutral(self) -> bool:
+        """Is the variant likely neutral?"""
+        self.assertFalse(self.indicator_query_response.is_likely_neutral())
+
+    def test_is_inconclusive(self) -> bool:
+        """Is the variant pathogenecity inconclusive?"""
+        self.assertFalse(self.indicator_query_response.is_inconclusive())
+
+    def test_is_unknown(self) -> bool:
+        """Is the variant pathogenecity unknown?"""
+        self.assertFalse(self.indicator_query_response.is_unknown())

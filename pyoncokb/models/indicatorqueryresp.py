@@ -6,7 +6,7 @@ See IndicatorQueryResp model on https://www.oncokb.org/swagger-ui/index.html
 from dataclasses import dataclass
 import datetime
 import logging
-from typing import Optional
+from typing import Dict, Optional
 
 from .implication import Implication
 from .indicatorquerytreatment import IndicatorQueryTreatment
@@ -333,3 +333,47 @@ class IndicatorQueryResp:
             "Leukemia",
             "Myeloproliferative",
         ]
+
+    def is_met_splice_variant(self) -> bool:
+        """Is it splice site alteration of MET gene?"""
+        gene_symbol = self.query.hugo_symbol
+        if gene_symbol is not None and gene_symbol == "MET":
+            alteration = self.query.alteration
+            if alteration is not None and "splice" in alteration:
+                return True
+        return False
+    
+    def is_resistant(self) -> bool:
+        """Is the variant related to therapy resistance?"""
+        oncogenic_map = self.get_oncogenic_map()
+        return self.oncogenic == oncogenic_map["RESISTANCE"] or self.highest_resistance_level is not None
+
+    def is_oncogenic(self) -> bool:
+        """Is the variant oncogenic?"""
+        oncogenic_map = self.get_oncogenic_map()
+        return self.oncogenic in oncogenic_map["ONCOGENIC"]
+
+    def is_likely_neutral(self) -> bool:
+        """Is the variant likely neutral?"""
+        oncogenic_map = self.get_oncogenic_map()
+        return self.oncogenic == oncogenic_map["LN"]
+
+    def is_inconclusive(self) -> bool:
+        """Is the variant pathogenecity inconclusive?"""
+        oncogenic_map = self.get_oncogenic_map()
+        return self.oncogenic == oncogenic_map["INCONCLUSIVE"]
+
+    def is_unknown(self) -> bool:
+        """Is the variant pathogenecity unknown?"""
+        oncogenic_map = self.get_oncogenic_map()
+        return self.oncogenic == oncogenic_map["UNKNOWN"]
+    
+    def get_oncogenic_map(self) -> Dict:
+        ONCOGENIC_MAP = {
+            "ONCOGENIC": ("Oncogenic", "Likely Oncogenic"),
+            "INCONCLUSIVE": "Inconclusive",
+            "UNKNOWN": "Unknown",
+            "LN": "Likely Neutral",
+            "RESISTANCE": "Resistance",
+        }
+        return ONCOGENIC_MAP
