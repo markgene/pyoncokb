@@ -23,164 +23,164 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
             genomic_change="12,25398285,25398285,C,A",
             ref_genome="GRCh37",
         )
-        cls.indicator_query_response = annotator.query()
+        cls.indicator_query_resp = annotator.query()
 
     def test_allele_exist(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertTrue(self.indicator_query_response.allele_exist)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertTrue(self.indicator_query_resp.allele_exist)
 
     def test_query_alteration(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertEqual(self.indicator_query_response.query.alteration, "G12C")
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertEqual(self.indicator_query_resp.query.alteration, "G12C")
 
     def test_query_entrez_gene_id(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertEqual(self.indicator_query_response.query.entrez_gene_id, 3845)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertEqual(self.indicator_query_resp.query.entrez_gene_id, 3845)
 
     def test_gene_exist(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertTrue(self.indicator_query_response.gene_exist)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertTrue(self.indicator_query_resp.gene_exist)
 
     def test_query_hugo_symbol(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertEqual(self.indicator_query_response.query.hugo_symbol, "KRAS")
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertEqual(self.indicator_query_resp.query.hugo_symbol, "KRAS")
 
     def test_highest_diagnostic_implication_level(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertEqual(
-                self.indicator_query_response.highest_diagnostic_implication_level,
+                self.indicator_query_resp.highest_diagnostic_implication_level,
                 "LEVEL_Dx2",
             )
 
     def test_highest_fda_level(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertEqual(
-                self.indicator_query_response.highest_fda_level, "LEVEL_Fda2"
+                self.indicator_query_resp.highest_fda_level, "LEVEL_Fda2"
             )
 
     def test_highest_prognostic_implication_level(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertIsNone(
-                self.indicator_query_response.highest_prognostic_implication_level
+                self.indicator_query_resp.highest_prognostic_implication_level
             )
 
     def test_highest_resistance_level(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertEqual(
-                self.indicator_query_response.highest_resistance_level, "LEVEL_R1"
+                self.indicator_query_resp.highest_resistance_level, "LEVEL_R1"
             )
 
     def test_highest_sensitive_level(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertEqual(
-                self.indicator_query_response.highest_sensitive_level, "LEVEL_1"
+                self.indicator_query_resp.highest_sensitive_level, "LEVEL_1"
             )
 
     def test_hotspot(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertTrue(self.indicator_query_response.hotspot)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertTrue(self.indicator_query_resp.hotspot)
 
     def test_mutation_effect_known_effect(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
             self.assertEqual(
-                self.indicator_query_response.mutation_effect.known_effect,
+                self.indicator_query_resp.mutation_effect.known_effect,
                 "Gain-of-function",
             )
 
     def test_oncogenic(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertEqual(self.indicator_query_response.oncogenic, "Oncogenic")
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertEqual(self.indicator_query_resp.oncogenic, "Oncogenic")
 
     def test_query_tumor_type(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNone(self.indicator_query_response.query.tumor_type)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNone(self.indicator_query_resp.query.tumor_type)
 
     def test_tumor_type_summary(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertEqual(self.indicator_query_response.tumor_type_summary, "")
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertEqual(self.indicator_query_resp.tumor_type_summary, "")
 
     def test_variant_exist(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertTrue(self.indicator_query_response.variant_exist)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertTrue(self.indicator_query_resp.variant_exist)
 
     def test_vus(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertFalse(self.indicator_query_response.vus)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertFalse(self.indicator_query_resp.vus)
 
     def test_treatments(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
-            for treatment in self.indicator_query_response.treatments:
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
+            for treatment in self.indicator_query_resp.treatments:
                 self.assertTrue(isinstance(treatment, IndicatorQueryTreatment))
 
     def test_summarize_treatments_of_level_1(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_1 = (
-                self.indicator_query_response.summarize_treatments_of_level_1()
+                self.indicator_query_resp.summarize_treatments_of_level_1()
             )
             self.assertGreaterEqual(len(treatments_level_1), 2)
 
     def test_summarize_treatments_of_level_1_have_fields(self):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_1 = (
-                self.indicator_query_response.summarize_treatments_of_level_1()
+                self.indicator_query_resp.summarize_treatments_of_level_1()
             )
             for treatment in treatments_level_1:
                 self.check_treatment(treatment)
 
     def test_summarize_treatments_of_level_2(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_2 = (
-                self.indicator_query_response.summarize_treatments_of_level_2()
+                self.indicator_query_resp.summarize_treatments_of_level_2()
             )
             self.assertGreaterEqual(len(treatments_level_2), 14)
 
     def test_summarize_treatments_of_level_2_have_fields(self):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_2 = (
-                self.indicator_query_response.summarize_treatments_of_level_2()
+                self.indicator_query_resp.summarize_treatments_of_level_2()
             )
             for treatment in treatments_level_2:
                 self.check_treatment(treatment)
 
     def test_summarize_treatments_of_level_r1(self):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_r1 = (
-                self.indicator_query_response.summarize_treatments_of_level_r1()
+                self.indicator_query_resp.summarize_treatments_of_level_r1()
             )
             self.assertEqual(len(treatments_level_r1), 3)
 
     def test_summarize_treatments_of_level_r1_have_fields(self):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_r1 = (
-                self.indicator_query_response.summarize_treatments_of_level_r1()
+                self.indicator_query_resp.summarize_treatments_of_level_r1()
             )
             for treatment in treatments_level_r1:
                 self.check_treatment(treatment)
@@ -188,21 +188,21 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
     def test_summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types(
         self,
     ):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_1 = (
-                self.indicator_query_response.summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types()
             )
             self.assertGreaterEqual(len(treatments_level_1), 2)
 
     def test_summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types_have_fields(
         self,
     ):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_1 = (
-                self.indicator_query_response.summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_1_and_non_lymphoid_myeloid_main_cancer_types()
             )
             for treatment in treatments_level_1:
                 self.check_treatment(treatment)
@@ -210,21 +210,21 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
     def test_summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types(
         self,
     ):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_2 = (
-                self.indicator_query_response.summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types()
             )
             self.assertGreaterEqual(len(treatments_level_2), 8)
 
     def test_summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types_have_fields(
         self,
     ):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_2 = (
-                self.indicator_query_response.summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_2_and_non_lymphoid_myeloid_main_cancer_types()
             )
             for treatment in treatments_level_2:
                 self.check_treatment(treatment)
@@ -232,21 +232,21 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
     def test_summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types(
         self,
     ):
-        self.assertTrue(isinstance(self.indicator_query_response, IndicatorQueryResp))
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        self.assertTrue(isinstance(self.indicator_query_resp, IndicatorQueryResp))
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_r1 = (
-                self.indicator_query_response.summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types()
             )
             self.assertEqual(len(treatments_level_r1), 3)
 
     def test_summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types_have_fields(
         self,
     ):
-        if isinstance(self.indicator_query_response, IndicatorQueryResp):
-            self.assertIsNotNone(self.indicator_query_response.treatments)
+        if isinstance(self.indicator_query_resp, IndicatorQueryResp):
+            self.assertIsNotNone(self.indicator_query_resp.treatments)
             treatments_level_r1 = (
-                self.indicator_query_response.summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types()
+                self.indicator_query_resp.summarize_treatments_of_level_r1_and_non_lymphoid_myeloid_main_cancer_types()
             )
             for treatment in treatments_level_r1:
                 self.check_treatment(treatment)
@@ -261,24 +261,24 @@ class GenomicChangeAnnotatorKrasG12ceTestCase(unittest.TestCase):
         self.assertTrue("level_associated_cancer_type_name" in treatment)
 
     def test_is_met_splice_variant(self):
-        self.assertFalse(self.indicator_query_response.is_met_splice_variant())
+        self.assertFalse(self.indicator_query_resp.is_met_splice_variant())
 
     def test_is_resistant(self) -> bool:
         """Is the variant related to therapy resistance?"""
-        self.assertTrue(self.indicator_query_response.is_resistant())
+        self.assertTrue(self.indicator_query_resp.is_resistant())
 
     def test_is_oncogenic(self) -> bool:
         """Is the variant oncogenic?"""
-        self.assertTrue(self.indicator_query_response.is_oncogenic())
+        self.assertTrue(self.indicator_query_resp.is_oncogenic())
 
     def test_is_likely_neutral(self) -> bool:
         """Is the variant likely neutral?"""
-        self.assertFalse(self.indicator_query_response.is_likely_neutral())
+        self.assertFalse(self.indicator_query_resp.is_likely_neutral())
 
     def test_is_inconclusive(self) -> bool:
         """Is the variant pathogenecity inconclusive?"""
-        self.assertFalse(self.indicator_query_response.is_inconclusive())
+        self.assertFalse(self.indicator_query_resp.is_inconclusive())
 
     def test_is_unknown(self) -> bool:
         """Is the variant pathogenecity unknown?"""
-        self.assertFalse(self.indicator_query_response.is_unknown())
+        self.assertFalse(self.indicator_query_resp.is_unknown())
