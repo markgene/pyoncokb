@@ -342,11 +342,14 @@ class IndicatorQueryResp:
             if alteration is not None and "splice" in alteration:
                 return True
         return False
-    
+
     def is_resistant(self) -> bool:
         """Is the variant related to therapy resistance?"""
         oncogenic_map = self.get_oncogenic_map()
-        return self.oncogenic == oncogenic_map["RESISTANCE"] or self.highest_resistance_level is not None
+        return (
+            self.oncogenic == oncogenic_map["RESISTANCE"]
+            or self.highest_resistance_level is not None
+        )
 
     def is_oncogenic(self) -> bool:
         """Is the variant oncogenic?"""
@@ -367,7 +370,7 @@ class IndicatorQueryResp:
         """Is the variant pathogenecity unknown?"""
         oncogenic_map = self.get_oncogenic_map()
         return self.oncogenic == oncogenic_map["UNKNOWN"]
-    
+
     def get_oncogenic_map(self) -> Dict:
         ONCOGENIC_MAP = {
             "ONCOGENIC": ("Oncogenic", "Likely Oncogenic"),
