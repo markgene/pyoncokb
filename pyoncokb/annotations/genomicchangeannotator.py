@@ -15,7 +15,14 @@ from .proteinchangeannotator import ProteinChangeAnnotator
 
 
 class GenomicChangeAnnotator:
-    """Annotate genomic change."""
+    """Annotate genomic change.
+    
+    The annotator does not only fetch annotation given genomic change. Instead,
+    it first fetches the annotation given genomic change. Then, get the protein 
+    change and fetch the annotation with the protein change. If it succeeds, 
+    return protein change annotation. If not, return genomic change annotation.
+    If neither annotation exists, return None.
+    """
 
     service_url = "/annotate/mutations/byGenomicChange"
 
