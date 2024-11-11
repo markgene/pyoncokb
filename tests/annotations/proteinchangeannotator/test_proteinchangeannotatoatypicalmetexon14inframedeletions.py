@@ -168,3 +168,27 @@ class ProteinChangeAnnotatorAtypicalMetExon14InframeDeletionTestCase(unittest.Te
                 self.indicator_query_resp.summarize_treatments_of_level_r1()
             )
             self.assertEqual(len(treatments_level_r1), 0)
+
+
+    def test_is_met_splice_variant(self):
+        self.assertFalse(self.indicator_query_resp.is_met_splice_variant())
+
+    def test_is_resistant(self) -> bool:
+        """Is the variant related to therapy resistance?"""
+        self.assertFalse(self.indicator_query_resp.is_resistant())
+
+    def test_is_oncogenic(self) -> bool:
+        """Is the variant oncogenic?"""
+        self.assertTrue(self.indicator_query_resp.is_oncogenic())
+
+    def test_is_likely_neutral(self) -> bool:
+        """Is the variant likely neutral?"""
+        self.assertFalse(self.indicator_query_resp.is_likely_neutral())
+
+    def test_is_inconclusive(self) -> bool:
+        """Is the variant pathogenecity inconclusive?"""
+        self.assertFalse(self.indicator_query_resp.is_inconclusive())
+
+    def test_is_unknown(self) -> bool:
+        """Is the variant pathogenecity unknown?"""
+        self.assertFalse(self.indicator_query_resp.is_unknown())
